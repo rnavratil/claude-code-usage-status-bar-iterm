@@ -6,7 +6,11 @@ import shutil
 import subprocess
 import iterm2
 
-SCRIPT = shutil.which("claude-code-usage-status-bar-iterm.sh") or os.path.expanduser("~/path/to/claude-code-usage-status-bar-iterm.sh")
+SCRIPT = (
+    shutil.which("claude-code-usage-status-bar-iterm.sh")
+    or shutil.which("claude-code-usage-status-bar-iterm.sh", path="/opt/homebrew/bin:/usr/local/bin")
+    or os.path.join(os.path.dirname(os.path.realpath(__file__)), "claude-code-usage-status-bar-iterm.sh")
+)
 LOCK = os.path.expanduser("~/.cache/cc-usage.lock")
 
 
@@ -28,13 +32,17 @@ async def main(connection):
     @iterm2.StatusBarRPC
     async def claude_usage(knobs):
         try:
-            result = await asyncio.get_event_loop().run_in_executor(
+            env = os.environ.copy()
+            script_dir = os.path.dirname(os.path.realpath(SCRIPT))
+            env["PATH"] = f"/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:{script_dir}:" + env.get("PATH", "")
+            result = await asyncio.get_running_loop().run_in_executor(
                 None,
                 lambda: subprocess.run(
                     ["bash", SCRIPT],
                     capture_output=True,
                     text=True,
                     timeout=10,
+                    env=env,
                 ),
             )
             output = result.stdout.strip()
