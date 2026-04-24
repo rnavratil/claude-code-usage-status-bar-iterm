@@ -2,10 +2,11 @@
 
 import asyncio
 import os
+import shutil
 import subprocess
 import iterm2
 
-SCRIPT = os.path.expanduser("~/path/to/claude-code-usage-status-bar-iterm.sh")
+SCRIPT = shutil.which("claude-code-usage-status-bar-iterm.sh") or os.path.expanduser("~/path/to/claude-code-usage-status-bar-iterm.sh")
 LOCK = os.path.expanduser("~/.cache/cc-usage.lock")
 
 
