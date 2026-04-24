@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 
 import asyncio
+import os
 import subprocess
 import iterm2
 
-SCRIPT = "/Users/rnavratil/Desktop/claude-code-usage-status-bar-iterm.sh"
+SCRIPT = os.path.expanduser("~/Desktop/claude-code-usage-status-bar-iterm.sh")
 
 
 async def main(connection):
@@ -14,7 +15,7 @@ async def main(connection):
         knobs=[],
         exemplar="session: 50% (Resets 8:30pm) | week: 10% (Resets Apr 25 at 3:00am) | extra: 66% (9.97/15.00 EUR)",
         update_cadence=10,
-        identifier="com.rnavratil.claude-usage",
+        identifier="com.claude-code-usage-status-bar-iterm",
     )
 
     @iterm2.StatusBarRPC
