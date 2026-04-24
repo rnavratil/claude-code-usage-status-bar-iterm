@@ -5,10 +5,16 @@ import os
 import subprocess
 import iterm2
 
-SCRIPT = os.path.expanduser("~/claude-code-usage-status-bar-iterm/claude-code-usage-status-bar-iterm.sh")
+SCRIPT = os.path.expanduser("~/Work/github/claude-code-usage-status-bar-iterm/claude-code-usage-status-bar-iterm.sh")
+LOCK = os.path.expanduser("~/.cache/cc-usage.lock")
 
 
 async def main(connection):
+    # clear stale lock on startup so first call always fetches fresh data
+    try:
+        os.remove(LOCK)
+    except FileNotFoundError:
+        pass
     component = iterm2.StatusBarComponent(
         short_description="Claude Usage",
         detailed_description="Claude API session and weekly usage limits",
