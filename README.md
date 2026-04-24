@@ -2,6 +2,9 @@
 
 iTerm2 status bar component that shows your Claude Code usage limits in real time.
 
+<img width="636" height="21" alt="image" src="https://github.com/user-attachments/assets/aacd4a69-4815-42fc-91fa-e02b9cb24752" />
+
+
 ```
 session: 6% (Resets Apr 24 at 1:30am) | week: 16% (Resets Apr 25 at 3:00am) | extra: 66% (9.97/15.00 EUR)
 ```
