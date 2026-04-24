@@ -14,7 +14,7 @@ async def main(connection):
         detailed_description="Claude API session and weekly usage limits",
         knobs=[],
         exemplar="session: 50% (Resets 8:30pm) | week: 10% (Resets Apr 25 at 3:00am) | extra: 66% (9.97/15.00 EUR)",
-        update_cadence=10,
+        update_cadence=60,
         identifier="com.claude-code-usage-status-bar-iterm",
     )
 
