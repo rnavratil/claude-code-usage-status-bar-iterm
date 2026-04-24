@@ -26,20 +26,22 @@ Data is fetched from the Claude API using the OAuth token stored by Claude Code 
 
 ## Installation
 
-**1. Copy the shell script**
+**1. Clone the repository**
 
-Place `claude-code-usage-status-bar-iterm.sh` anywhere on your machine. The default location expected by the Python script is `~/Desktop/claude-code-usage-status-bar-iterm.sh`.
-
-If you place it elsewhere, update the `SCRIPT` path in `claude-code-usage-status-bar-iterm.py`:
-
-```python
-SCRIPT = os.path.expanduser("~/path/to/claude-code-usage-status-bar-iterm.sh")
+```bash
+git clone https://github.com/rnavratil/claude-code-usage-status-bar-iterm.git ~/claude-code-usage-status-bar-iterm
 ```
 
 Make the script executable:
 
 ```bash
-chmod +x ~/Desktop/claude-code-usage-status-bar-iterm.sh
+chmod +x ~/claude-code-usage-status-bar-iterm/claude-code-usage-status-bar-iterm.sh
+```
+
+If you clone to a different location, update the `SCRIPT` path in `claude-code-usage-status-bar-iterm.py`:
+
+```python
+SCRIPT = os.path.expanduser("~/path/to/claude-code-usage-status-bar-iterm.sh")
 ```
 
 **2. Enable the iTerm2 Python API**
@@ -63,7 +65,7 @@ In iTerm2: **Scripts → AutoLaunch → claude-code-usage-status-bar-iterm.py**
 
 iTerm2 → **Preferences → Profiles → Session → Configure Status Bar**
 
-Drag **Claude Usage** into the active components.
+Drag **Claude Usage** into the active components (if it's not visible, scroll down in the component list).
 
 ---
 

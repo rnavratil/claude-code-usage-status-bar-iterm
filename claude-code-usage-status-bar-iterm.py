@@ -5,7 +5,7 @@ import os
 import subprocess
 import iterm2
 
-SCRIPT = os.path.expanduser("~/Desktop/claude-code-usage-status-bar-iterm.sh")
+SCRIPT = os.path.expanduser("~/claude-code-usage-status-bar-iterm/claude-code-usage-status-bar-iterm.sh")
 
 
 async def main(connection):
