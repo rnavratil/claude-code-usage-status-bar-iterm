@@ -26,7 +26,7 @@ if [[ -f "$CACHE" ]]; then
     (( age < TTL )) && cat "$CACHE" && exit 0
 fi
 
-if [[ -f "$LOCK" ]]; then
+if [[ -f "$LOCK" && -f "$CACHE" ]]; then
     age=$(( $(date +%s) - $(stat -f '%m' "$LOCK" 2>/dev/null || echo 0) ))
     (( age < LOCK_TTL )) && fallback ""
 fi
