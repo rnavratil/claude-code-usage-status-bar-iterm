@@ -5,7 +5,7 @@ import os
 import subprocess
 import iterm2
 
-SCRIPT = os.path.expanduser("~/Work/github/claude-code-usage-status-bar-iterm/claude-code-usage-status-bar-iterm.sh")
+SCRIPT = os.path.expanduser("~/path/to/claude-code-usage-status-bar-iterm.sh")
 LOCK = os.path.expanduser("~/.cache/cc-usage.lock")
 
 
@@ -21,7 +21,7 @@ async def main(connection):
         knobs=[],
         exemplar="session: 50% (Resets 8:30pm) | week: 10% (Resets Apr 25 at 3:00am) | extra: 66% (9.97/15.00 EUR)",
         update_cadence=60,
-        identifier="com.claude-code-usage-status-bar-iterm",
+        identifier="com.rnavratil.claude-code-usage-status-bar-iterm",
     )
 
     @iterm2.StatusBarRPC
