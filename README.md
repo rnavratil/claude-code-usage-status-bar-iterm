@@ -11,7 +11,7 @@ Displays:
 - **week** — 7-day rolling usage (%)
 - **extra** — paid extra usage credits (only shown when enabled)
 
-Data is fetched from the Claude API using the OAuth token stored by Claude Code in macOS Keychain. Results are cached in `~/.cache/cc-usage.txt` for 60 seconds, and a lock file (`~/.cache/cc-usage.lock`) ensures the API is never called more than once per 30 seconds regardless of how often the status bar refreshes.
+Data is fetched from the Claude API using the OAuth token stored by Claude Code in macOS Keychain. Results are cached in `~/.cache/cc-usage.txt` for 60 seconds, so the API is never called more than once per minute regardless of how often the status bar refreshes.
 
 ---
 
