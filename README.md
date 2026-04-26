@@ -6,6 +6,7 @@ iTerm2 status bar component that shows your Claude Code usage limits in real tim
 <br>
 <img width="1512" height="982" alt="image" src="https://github.com/user-attachments/assets/550b9a8c-15c1-488a-aab3-3a55d436a2f7" />
 <br>
+
 Displays:
 - **session** — 5-hour rolling usage (%)
 - **week** — 7-day rolling usage (%)
